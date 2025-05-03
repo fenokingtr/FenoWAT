@@ -124,7 +124,7 @@ NPM paket yapılandırmasını içerir. Önemli kısımlar:
 
 1. Bu depoyu klonlayın:
    ```bash
-   git clone https://github.com/kullanici-adi/FenoWAT.git
+   git clone https://github.com/fenokingtr/FenoWAT.git
    cd FenoWAT
    ```
 
