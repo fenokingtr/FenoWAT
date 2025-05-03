@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #f0f0f0;
+    background-color: #121212;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.connection-status {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.connection-status span {
+    font-weight: bold;
+}
+
+main {
+    min-height: calc(100vh - 160px);
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.panel {
+    background-color: #1e1e1e;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+}
+
+.panel h2 {
+    color: #e53935;
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+}
+
+.input-group button, button {
+    padding: 10px 15px;
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+button#take-screenshot, button#start-monitoring, button#list-processes, button#scan-network {
+    border-radius: 4px;
+    width: auto;
+    margin-bottom: 15px;
+}
+
+.input-group button:hover, button:hover {
+    background-color: #c62828;
+}
+
+.output-container {
+    background-color: #000000;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    padding: 15px;
+    min-height: 200px;
+    max-height: 350px;
+    overflow-y: auto;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+    color: #4CAF50;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #4CAF50;
+}
+
+.stat {
+    margin-bottom: 15px;
+}
+
+.stat label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #f0f0f0;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #2a2a2a;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #e53935;
+    transition: width 0.5s ease-in-out;
+}
+
+#memory-bar {
+    background-color: #c62828;
+}
+
+.hidden {
+    display: none;
+}
+
+.stats-container {
+    margin-top: 15px;
+}
+
+#system-info-content {
+    line-height: 1.8;
+}
+
+#system-info-content div {
+    margin-bottom: 5px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    color: #888;
+}
+
+/* Status colors */
+.connected {
+    color: #4CAF50;
+}
+
+.disconnected {
+    color: #e53935;
+}
+
+/* System Info Tabs Styles */
+.info-tabs {
+    display: flex;
+    border-bottom: 1px solid #444;
+    margin-bottom: 15px;
+    overflow-x: auto;
+}
+
+.tab-button {
+    padding: 8px 12px;
+    background-color: transparent;
+    color: #ccc;
+    border: none;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+    margin-right: 2px;
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+    background-color: rgba(229, 57, 53, 0.2);
+}
+
+.tab-button.active {
+    background-color: #e53935;
+    color: white;
+}
+
+.tab-content {
+    padding: 10px 0;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.tab-pane h3 {
+    color: #e53935;
+    font-size: 16px;
+    margin: 15px 0 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #333;
+}
+
+.tab-pane h3:first-child {
+    margin-top: 0;
+}
+
+.sub-section {
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border-left: 2px solid #444;
+}
+
+/* Storage Bar */
+.storage-bar {
+    height: 8px;
+    background-color: #2a2a2a;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.storage-progress {
+    height: 100%;
+    background-color: #e53935;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+    
+    .panel {
+        margin-bottom: 15px;
+    }
+
+    .info-tabs {
+        flex-wrap: wrap;
+    }
+
+    .tab-button {
+        flex-grow: 1;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+}
+
+/* Added for Android compatibility */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    header h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .connection-status {
+        width: 100%;
+        margin-top: 5px;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .input-group input {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 5px;
+    }
+    
+    .input-group button, button {
+        width: 100%;
+        border-radius: 4px;
+    }
+    
+    .output-container {
+        min-height: 150px;
+        max-height: 250px;
+        font-size: 12px;
+    }
+    
+    .panel h2 {
+        font-size: 16px;
+    }
+}
+
+/* Android touch styles */
+.touch-active {
+    opacity: 0.7;
+    transform: scale(0.97);
+}
+
+.android-device button {
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.1s, opacity 0.1s;
+}
+
+.android-device .output-container {
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+
+.android-device input {
+    font-size: 16px; /* Prevents zoom on focus in Android */
+} 

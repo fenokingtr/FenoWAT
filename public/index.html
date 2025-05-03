@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#121212">
+    <title>FenoWAT - Web Administration Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FenoWAT - Web Administration Tool</h1>
+            <div class="connection-status">Status: <span id="connection-status">Connecting...</span></div>
+        </header>
+
+        <main>
+            <div class="dashboard">
+                <section class="system-info panel">
+                    <h2>System Information</h2>
+                    <div id="system-info-content">Loading...</div>
+                </section>
+
+                <section class="system-stats panel">
+                    <h2>System Monitoring</h2>
+                    <div id="system-stats-content">
+                        <button id="start-monitoring">Start Monitoring</button>
+                        <div class="stats-container hidden">
+                            <div class="stat">
+                                <label>CPU Usage:</label>
+                                <div class="progress-bar">
+                                    <div id="cpu-bar" class="progress" style="width: 0%"></div>
+                                </div>
+                                <span id="cpu-usage">0%</span>
+                            </div>
+                            <div class="stat">
+                                <label>Memory Usage:</label>
+                                <div class="progress-bar">
+                                    <div id="memory-bar" class="progress" style="width: 0%"></div>
+                                </div>
+                                <span id="memory-usage">0%</span>
+                            </div>
+                            <div class="stat">
+                                <label>Uptime:</label>
+                                <span id="uptime">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="command-execution panel">
+                    <h2>Command Execution</h2>
+                    <div class="input-group">
+                        <input type="text" id="command-input" placeholder="Enter command...">
+                        <button id="execute-command">Execute</button>
+                    </div>
+                    <div class="output-container">
+                        <pre id="command-output">Command output will appear here...</pre>
+                    </div>
+                </section>
+
+                <section class="file-explorer panel">
+                    <h2>File Explorer</h2>
+                    <div class="input-group">
+                        <input type="text" id="directory-input" placeholder="Enter directory path...">
+                        <button id="list-directory">List</button>
+                    </div>
+                    <div class="output-container">
+                        <pre id="directory-output">Directory listing will appear here...</pre>
+                    </div>
+                </section>
+
+                <section class="screenshot panel">
+                    <h2>Screenshot</h2>
+                    <button id="take-screenshot">Take Screenshot</button>
+                    <div id="screenshot-result" class="output-container">
+                        <div id="screenshot-placeholder">Screenshots will appear here...</div>
+                    </div>
+                </section>
+
+                <section class="process-manager panel">
+                    <h2>Process Manager</h2>
+                    <button id="list-processes">List Processes</button>
+                    <div class="output-container">
+                        <pre id="process-output">Process list will appear here...</pre>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="process-id" placeholder="Enter Process ID to terminate...">
+                        <button id="kill-process">Terminate</button>
+                    </div>
+                </section>
+
+                <section class="network-monitor panel">
+                    <h2>Network Monitor</h2>
+                    <button id="scan-network">Scan Network</button>
+                    <div class="output-container">
+                        <pre id="network-output">Network scan results will appear here...</pre>
+                    </div>
+                </section>
+
+                <section class="registry-editor panel">
+                    <h2>Registry Editor</h2>
+                    <div class="input-group">
+                        <input type="text" id="registry-path" placeholder="Enter registry path...">
+                        <button id="read-registry">Read</button>
+                    </div>
+                    <div class="output-container">
+                        <pre id="registry-output">Registry data will appear here...</pre>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>FenoWAT - Web Administration Tool - For educational purposes only</p>
+        </footer>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
